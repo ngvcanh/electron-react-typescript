@@ -1,0 +1,105 @@
+:root{
+  /* Border */
+  --border: 1px;
+  --border-1: 1px;
+  --border-2: 2px;
+  --border-3: 3px;
+  --border-4: 4px;
+  --border-5: 5px;
+
+  /* Cell */
+  --cell-padding-y: .5rem;
+  --cell-padding-x: .5rem;
+  --cell-padding-y-sm: .25rem;
+  --cell-padding-x-sm: .25rem;
+
+  /* Color */
+  --white: #fff;
+  --green: #198754;
+  --red: #dc3545;
+  --blue: #0d6efd;
+  --cyan: #0dcaf0;
+  --gray-100: #f8f9fa;
+  --gray-600: #6c757d;
+  --gray-900: #212529;
+  --black: #000;
+  --yellow: #ffc107;
+
+  /* Font size */
+  --font-size-base: 1rem;
+  --font-size-sm: calc(var(--font-size-base) * 0.875);
+
+  /* Font weight */
+  --font-weight-lighter: lighter;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+  --font-weight-bolder: bolder;
+  --font-weight-base: var(--font-weight-normal);
+
+  /* Heading */
+  --h1-font-size: calc(var(--font-size-base) * 2.5);
+  --h2-font-size: calc(var(--font-size-base) * 2);
+  --h3-font-size: calc(var(--font-size-base) * 1.75);
+  --h4-font-size: calc(var(--font-size-base) * 1.5);
+  --h5-font-size: calc(var(--font-size-base) * 1.25);
+  --h6-font-size: var(--font-size-base);
+
+  /* Line height */
+  --line-height-base: 1.5;
+  --line-height-sm: 1.25;
+  --line-height-lg: 2;
+
+  /* Modal */
+  --modal-sm: 300px;
+  --modal-md: 500px;
+  --modal-lg: 800px;
+  --modal-xl: 1140px;
+  --modal-fade-transform: translate(0, -50px);
+  --modal-show-transform: none;
+  --modal-transition: transform .3s ease-out;
+  --modal-scale-transform: scale(1.02);
+
+  /* Radius */
+  --radius: .25rem;
+  --radius-sm: .2rem;
+  --radius-lg: .3rem;
+  --radius-pill: 50rem;
+
+  /* Shadow */
+  --shadow: 0 .5rem 1rem rgba(var(--black), .15);
+  --shadow-sm: 0 .125rem .25rem rgba(var(--black), .075);
+  --shadow-lg: 0 1rem 3rem rgba(var(--black), .175);
+  --shadow-inset: inset 0 1px 2px rgba(var(--black), .075);
+
+  /* Spinner */
+  --spinner-width: 2rem;
+  --spinner-height: var(--spinner-width);
+  --spinner-vertical-align: -.125em;
+  --spinner-border-width: .25em;
+  --spinner-animation-speed: .75s;
+  --spinner-width-sm: 1rem;
+  --spinner-height-sm: var(--spinner-width-sm);
+  --spinner-border-width-sm: .2em;
+
+  /* Variant */
+  --primary: var(--blue);
+  --success: var(--green);
+  --info: var(--cyan);
+  --secondary: var(--gray-600);
+  --danger: var(--red);
+  --light: var(--gray-100);
+  --dark: var(--gray-900);
+  --warning: var(--yellow);
+
+  /* z-index */
+  --zindex-dropdown: 1000;
+  --zindex-sticky: 1020;
+  --zindex-fixed: 1030;
+  --zindex-modal-backdrop: 1040;
+  --zindex-offcanvas: 1050;
+  --zindex-modal: 1060;
+  --zindex-popover: 1070;
+  --zindex-tooltip: 1080;
+
+}
