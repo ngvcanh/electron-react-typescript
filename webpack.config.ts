@@ -153,13 +153,13 @@ if (BUILDER === EBuilder.LAUNCH){
 
   plugins.push(
 
-    new WebpackShellPluginNext({
-      onBuildEnd: {
-        scripts: [ 'npm run electron:launch' ],
-        blocking: false,
-        parallel: true
-      }
-    }),
+    // new WebpackShellPluginNext({
+    //   onBuildEnd: {
+    //     scripts: [ 'npm run electron:launch' ],
+    //     blocking: false,
+    //     parallel: true
+    //   }
+    // }),
 
     ElectronReload()
   )
