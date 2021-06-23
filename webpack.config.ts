@@ -1,5 +1,5 @@
 import path from 'path';
-import { WebpackPluginInstance, RuleSetRule } from 'webpack';
+import { WebpackPluginInstance, RuleSetRule, IgnorePlugin } from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CssMinimizerWebpackPlugin from 'css-minimizer-webpack-plugin';
@@ -162,6 +162,12 @@ if (BUILDER === EBuilder.LAUNCH){
     // }),
 
     ElectronReload()
+  )
+
+  process.platform === 'darwin' || plugins.push(
+    new IgnorePlugin({
+      resourceRegExp: /^fsevents/i
+    })
   )
 
 }
