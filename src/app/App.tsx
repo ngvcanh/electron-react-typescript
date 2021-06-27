@@ -1,9 +1,20 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { hot } from 'react-hot-loader';
+import * as Components from './Components';
+import { TitleBarMenu } from './Constants/Menu';
+import Logo from './assets/img/logo.png';
 
 const App: React.FunctionComponent = () => {
 
-  return <h1>Hello 123</h1>
+  return <BrowserRouter>
+    <Components.Base.Container fluid>
+    
+      <Components.Layout.TitleBar logo={ Logo } menu={ TitleBarMenu } />
+      <Components.Layout.RenderRouter />
+    </Components.Base.Container>
+  </BrowserRouter>
 
 }
 
-export default App;
+export default hot(module)(App);

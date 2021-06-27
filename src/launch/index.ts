@@ -1,11 +1,14 @@
-import { BrowserWindow, app, nativeImage } from 'electron';
 import path from 'path';
-import fs from 'fs';
+import { BrowserWindow, app, nativeImage } from 'electron';
+import { mainReloader } from 'electron-hot-reload';
 import { isProd, isDev, APP_DIST, PORT, PUBLIC_URL } from '../shared/Env';
 
-const { LAUNCH_DIST_PATH, APP_OUTPUT_DIR_IMG = '' } = process.env;
+import ProcessListener from './Modules/ProcessListener';
 
+const { APP_OUTPUT_DIR_IMG = '' } = process.env;
 let mainWindow: BrowserWindow | null = null;
+
+mainReloader(path.resolve(__dirname, '..', '..', 'src', 'app', 'assets'));
 
 const createWindow = () => {
 
@@ -13,14 +16,17 @@ const createWindow = () => {
   const icon = nativeImage.createFromPath(iconPath);
 
   if (!mainWindow){
-  
     mainWindow = new BrowserWindow({
       show: true,
       frame: false,
+      minWidth: 500,
+      minHeight: 400,
       icon,
       webPreferences: {
         nodeIntegration: true,
-        enableRemoteModule: false
+        enableRemoteModule: true,
+        contextIsolation: true,
+        preload: path.resolve(__dirname, 'preload.js')
       }
     });
   }
@@ -36,9 +42,11 @@ const createWindow = () => {
 
   //mainWindow.setOverlayIcon(icon, 'Description for overlay')
 
+  mainWindow.maximize();
   mainWindow.setMenuBarVisibility(false);
   isDev && mainWindow.webContents.openDevTools();
 
+  ProcessListener.listen(mainWindow);
 }
 
 app.whenReady().then(createWindow);

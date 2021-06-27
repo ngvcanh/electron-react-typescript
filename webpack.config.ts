@@ -48,6 +48,8 @@ if (BUILDER === EBuilder.APP){
   outputHashName = '.[contenthash:6]';
   target = 'web';
 
+  customConfig.entry = path.resolve(__dirname, 'src', sourceDir, 'index.' + entryExtension);
+
   outputCustom.chunkFilename = '[id].[chunkhash].js';
 
   const CSSRule = { test: /\.css$/, use: [ MiniCssExtractPlugin.loader, 'css-loader' ] };
@@ -132,6 +134,11 @@ if (BUILDER === EBuilder.LAUNCH){
   entryExtension = 'ts';
   target = 'electron-main';
 
+  customConfig.entry = {
+    main: path.resolve(__dirname, 'src', sourceDir, 'index.' + entryExtension),
+    preload: path.resolve(__dirname, 'src', sourceDir, 'preload.' + entryExtension)
+  }
+
   const ImageRule = {
     test: /\.(png|jpg|gif|svg|webp)$/i,
     use: [
@@ -149,7 +156,7 @@ if (BUILDER === EBuilder.LAUNCH){
   const WebpackElectronReload = require('webpack-electron-reload');
   const ElectronReload = WebpackElectronReload({
     path: path.resolve(__dirname, 'dist', LAUNCH_DIST, 'main.js')
-  }) ;
+  });
 
   plugins.push(
 
@@ -162,7 +169,7 @@ if (BUILDER === EBuilder.LAUNCH){
     // }),
 
     ElectronReload()
-  )
+  );
 
   process.platform === 'darwin' || plugins.push(
     new IgnorePlugin({
@@ -182,11 +189,9 @@ const configs: Configuration = { ...customConfig };
 
 configs.mode = MODE as EMode;
 
-configs.resolve = { extensions: [ '.ts', '.tsx', '.js', '.jsx' ] }
+configs.resolve = { extensions: [ '.ts', '.tsx', '.js', '.jsx', '.css' ] }
 
 configs.target = target;
-
-configs.entry = path.resolve(__dirname, 'src', sourceDir, 'index.' + entryExtension);
 
 configs.output = { ...output };
 

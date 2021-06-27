@@ -1,0 +1,108 @@
+:root{
+  --titlebar-height: 30px;
+  --titlebar-hover-bg: rgb(80, 80, 80);
+  --titlebar-icon-width: 46px;
+}
+
+.kensoni-titlebar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--titlebar-height);
+  z-index: 999;
+}
+
+.kensoni-titlebar-wrapper{
+  display: flex;
+  width: 100%;
+  justify-content: left;
+  height: var(--titlebar-height);
+  background-color: rgb(60, 60, 60);
+  color: rgb(204, 204, 204);
+  position: relative;
+  height: 100%;
+}
+
+.kensoni-titlebar-drag-region{
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - calc(var(--titlebar-icon-width) * 3));
+  height: 100%;
+  z-index: 1000;
+  -webkit-app-region: drag;
+}
+
+.kensoni-titlebar-logo{
+  width: var(--titlebar-icon-width);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-app-region: drag;
+}
+
+.kensoni-titlebar-logo img {
+  max-width: 60%;
+  max-height: 16px;
+  vertical-align: middle;
+}
+
+.kensoni-titlebar-controls{
+  width: calc(var(--titlebar-icon-width) * 3);
+  flex-grow: 0;
+  flex-shrink: 0;
+  margin-left: auto;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  z-index: 3000;
+  position: relative;
+}
+
+.kensoni-titlebar-icons{
+  width: var(--titlebar-icon-width);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color ease-in-out 0.15s;
+}
+
+.kensoni-titlebar-icon{
+  font-size: 16px;
+}
+
+.kensoni-titlebar-icons:hover{
+  background-color: var(--titlebar-hover-bg);
+}
+
+.kensoni-titlebar-close:hover{
+  background-color: rgba(232, 17, 35, .9);
+  color: #fff;
+}
+
+.kensoni-titlebar-title{
+  max-width: calc(100vw - calc(var(--titlebar-icon-width) * 4));
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0px);
+  font-size: 12px;
+  font-family: Segoe WPC,Segoe UI,sans-serif;
+  flex: 0 1 auto;
+  height: var(--titlebar-height);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: flex;
+  zoom: 1;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: var(--titlebar-height);
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  -webkit-user-select: none;
+}

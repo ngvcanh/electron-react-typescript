@@ -9,16 +9,29 @@ a{
 body {
   margin: 0;
   font-family: Helvetica, sans-serif, Arial;
-  font-size: var(--font-size-sm);
+  font-size: 13px;
   font-weight: var(--font-weight-base);
   line-height: var(--line-height-base);
   color: var(--secondary);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(var(--black), 0);
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+p{
+  margin: 0;
 }
 
 ul{
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+#kensoni{
+  width: 100vw;
+  height: 100vh;
+  background-color: #252526;
 }
