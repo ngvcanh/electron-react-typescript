@@ -1,5 +1,5 @@
 import React from 'react';
-import utils from '../../../utils';
+import utils from '@kensoni/react-utils';
 import Menu, { MenuProps } from './Menu';
 
 interface MenuHorizontalProps extends MenuProps{}

@@ -1,5 +1,4 @@
 import React from 'react';
-import MenuItem from './Item';
 import { ControlledMenu } from '@szhsin/react-menu';
 import { IMenuItem, RectElement, renderItem } from './IMenu';
 

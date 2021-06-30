@@ -1,5 +1,5 @@
+import Icons from '@kensoni/react-icons';
 import * as Components from '../Components';
-import { FaFileAudio } from 'react-icons/fa';
 import { ERole } from './Role';
 
 export const TitleBarMenu: Components.Layout.IMenuItem[] = [
@@ -8,7 +8,7 @@ export const TitleBarMenu: Components.Layout.IMenuItem[] = [
     items: [
       {
         name: 'New file',
-        icon: FaFileAudio,
+        icon: Icons.FaFileAudio,
         role: {
           name: ERole.COPY,
           options: {

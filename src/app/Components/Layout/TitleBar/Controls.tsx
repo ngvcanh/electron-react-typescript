@@ -1,6 +1,6 @@
 import React from 'react';
+import utils from '@kensoni/react-utils';
 import Icon from './Icon';
-import utils from '../../../utils';
 import { HTMLDivProps } from '../../../Define/HTML';
 
 import { 

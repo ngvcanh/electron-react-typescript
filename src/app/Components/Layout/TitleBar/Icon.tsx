@@ -1,8 +1,7 @@
 import React from 'react';
-import utils from '../../../utils';
-import { IconType } from 'react-icons';
+import utils from '@kensoni/react-utils';
+import Icons, { IconType } from '@kensoni/react-icons';
 import { HTMLDivProps } from '../../../Define/HTML';
-import { ReactIcon } from '../../Base';
 
 interface TitleBarIconProps extends HTMLDivProps{
   Icon: IconType;
@@ -17,7 +16,7 @@ const TitleBarIcon: TitleBarIconComponent = props => {
   const iconClass = utils.className('kensoni-titlebar-icons', className);
 
   return <div className={ iconClass } onClick={ onClick }>
-    <ReactIcon Icon={ Icon } className="kensoni-titlebar-icon" />
+    <Icons.Icon Icon={ Icon } className="kensoni-titlebar-icon" />
   </div>
 
 }

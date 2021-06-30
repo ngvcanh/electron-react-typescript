@@ -1,6 +1,5 @@
 import { BrowserWindow, ipcMain } from 'electron';
-import { EChannel } from '../../shared/preload';
-
+import { KenSoni } from '@kensoni/core';
 class ProcessListener{
 
   private static pl: ProcessListener;
@@ -17,7 +16,7 @@ class ProcessListener{
   }
 
   private closeWindow(){
-    ipcMain.handle(EChannel.WINDOW_CLOSE, event => {
+    ipcMain.handle(KenSoni.EChannel.WINDOW_CLOSE, event => {
       event.preventDefault();
       this.window.webContents.isDevToolsOpened() && this.window.webContents.closeDevTools();
       this.window.close();

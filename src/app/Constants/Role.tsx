@@ -34,6 +34,22 @@ export const Role = {
 
 };
 
+export const roleHandler = (role: ERole, options?: RoleOptions) => {
+  switch(role){
+    case ERole.COPY:
+      return Role.copy(options);
+    case ERole.PASTE:
+      return Role.paste(options);
+    case ERole.CUT:
+      return Role.cut(options);
+    case ERole.OPENFILE:
+      return Role.openFile(options);
+    case ERole.OPENFOLDER:
+      return Role.openFolder(options);
+    default: throw new Error('Role undefined');
+  }
+};
+
 export interface RoleOptions{
   [x: string]: any;
 }

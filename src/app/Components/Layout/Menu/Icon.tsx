@@ -1,8 +1,6 @@
 import React from 'react';
-import utils from '../../../utils';
-import { IconType } from 'react-icons';
-import { ReactIcon } from '../../Base';
-import { BsCircle } from 'react-icons/bs';
+import utils from '@kensoni/react-utils';
+import Icons, { IconType } from '@kensoni/react-icons';
 
 interface MenuIconProps{
   className?: string;
@@ -19,7 +17,7 @@ const MenuIcon: MenuIconComponent = props => {
   if (!useIcon) return null;
 
   return <span className={ utils.className('kensoni-menu-icon', className) }>
-    { <ReactIcon Icon={ Icon ? Icon : BsCircle } /> }
+    { <Icons.Icon Icon={ Icon ? Icon : Icons.BsCircle } /> }
   </span>
 
 }

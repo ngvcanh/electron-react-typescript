@@ -1,5 +1,5 @@
 import React from 'react';
-import utils from '../../../utils';
+import utils from '@kensoni/react-utils';
 import MenuItem from './Item';
 import { IMenuItem } from './IMenu';
 

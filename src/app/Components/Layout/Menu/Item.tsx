@@ -1,6 +1,5 @@
 import React from 'react';
 import MenuContext, { MenuContextRef } from './Context';
-import { MenuItem as SzItem } from '@szhsin/react-menu';
 import { IMenuItem, renderItem } from './IMenu';
 
 interface MenuItemProps{

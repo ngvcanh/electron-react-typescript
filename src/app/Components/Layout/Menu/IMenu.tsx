@@ -1,9 +1,9 @@
 import React from 'react';
+import utils from '@kensoni/react-utils';
 import MenuIcon from './Icon';
 import { MenuItem, SubMenu, MenuDivider, MenuHeader, MenuItemProps, ClickEvent } from '@szhsin/react-menu';
-import { IconType } from 'react-icons';
-import { ERole, RoleOptions } from '../../../Constants/Role';
-import utils from '../../../utils';
+import { IconType } from '@kensoni/react-icons';
+import { ERole, RoleOptions, roleHandler } from '../../../Constants/Role';
 
 interface IRole{
   name: ERole;
@@ -36,15 +36,15 @@ const clickRole = (item: IMenuItem) => (e: ClickEvent) => {
   if (!item.role) return;
 
   if (typeof item.role === 'string'){
-    utils.roleHandler(item.role);
+    roleHandler(item.role);
   }
   else{
-    utils.roleHandler(item.role.name, item.role.options);
+    roleHandler(item.role.name, item.role.options);
   }
 }
 
 const clickHref = (href: string) => () => {
-  if (utils.isInternalLink(href)){
+  if (!!href.match(/^\.?\/[^\/]/)){
     utils.KenSoni.openExternalLink(href);
   }
   else{

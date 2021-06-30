@@ -43,7 +43,6 @@
     "@types/react": "^17.0.11",
     "@types/react-dom": "^17.0.8",
     "@types/react-hot-loader": "^4.1.1",
-    "@types/react-icons": "^3.0.0",
     "@types/react-router-dom": "^5.1.7",
     "@types/webpack-dev-server": "^3.11.4",
     "babel-core": "^6.26.3",
@@ -68,12 +67,14 @@
     "webpack-shell-plugin-next": "^2.2.2"
   },
   "dependencies": {
+    "@kensoni/core": "^0.0.1",
+    "@kensoni/react-icons": "^4.2.0",
+    "@kensoni/react-utils": "^0.0.2",
     "@szhsin/react-menu": "^1.10.1",
     "electron-hot-reload": "^0.1.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hot-loader": "^4.13.0",
-    "react-icons": "^4.2.0",
     "react-router-dom": "^5.2.0"
   }
 }

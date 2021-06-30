@@ -1,10 +1,10 @@
 import React from 'react';
-import { HTMLDivProps } from '../../../Define/HTML';
-import utils from '../../../utils';
+import utils from '@kensoni/react-utils';
 import Controls from './Controls';
 import Title from './Title';
 import Logo from './Logo';
 import { MenuHorizontal, IMenuItem } from '../Menu';
+import { HTMLDivProps } from '../../../Define/HTML';
 
 interface TitleBarProps extends HTMLDivProps{
   logo: string;
